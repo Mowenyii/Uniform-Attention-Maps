@@ -20,12 +20,7 @@ Text-guided image generation and editing using diffusion models have achieved re
 
 ![Uniform Attention Maps](docs/method.png)
 
-(a) Image reconstruction using DDIM with different prompts. (b) Our approach introduces Uniform Attention Maps, where traditional attention maps are replaced with uniform maps that distribute attention weights equally across the token dimension. By combining these uniform maps with the value tokens \( V \), we generate a more balanced attention term \( A \). This method ensures consistent attention, resulting in more accurate image reconstructions.
-
-
-![outline](docs/method_pipe.png)
-
-The proposed tuning-free image editing framework. We introduce an auxiliary branch and generate masks based on the differences between the source branch and the target branch to blend the results of the auxiliary branch. Our method effectively enhances the performance of existing image editing algorithms.
+(a) Image reconstruction using DDIM with different prompts. (b) Our approach introduces Uniform Attention Maps, where traditional attention maps are replaced with uniform maps that distribute attention weights equally across the token dimension. By combining these uniform maps with the value tokens, we generate a more balanced attention term. This method ensures consistent attention, resulting in more accurate image reconstructions. (c) The proposed tuning-free image editing framework. We introduce an auxiliary branch and generate masks based on the differences between the source branch and the target branch to blend the results of the auxiliary branch. Our method effectively enhances the performance of existing image editing algorithms.
 
 
 ## Getting Started
