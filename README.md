@@ -63,7 +63,7 @@ python evaluation/eval.py --metrics "structure_distance" "psnr_unedit_part" "lpi
 ###  Results
 
 
-Based on our algorithm, as shown in the pseudocode, adding the red-highlighted line of code can significantly improve the editing effect. The quantitative results are shown in the table below, with the red-colored "+ ours" indicating the improvements.
+Based on our algorithm, as shown in the pseudocode, adding the [red-highlighted line  of code](https://github.com/Mowenyii/Uniform-Attention-Maps/blob/main/models/masactrl/diffuser_utils.py#L248) can significantly improve the editing effect. The quantitative results are shown in the table below, with the red-colored "+ ours" indicating the improvements.
 
 ![algo](docs/algo.png)
 
