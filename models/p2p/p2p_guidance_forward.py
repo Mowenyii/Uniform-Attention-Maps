@@ -56,7 +56,7 @@ def p2p_guidance_diffusion_step(model, controller, latents, context, t, guidance
     
     quantile_list=np.linspace(0, quantile, 50)
     if ( (t < recon_t_begin) and ( t > recon_t_end)):
-        recon_lr=1 
+        
         prev_t = t - model.scheduler.config.num_train_timesteps  // model.scheduler.num_inference_steps
         alpha_prod_t = model.scheduler.alphas_cumprod[t]
         alpha_prod_t_prev = model.scheduler.alphas_cumprod[prev_t] if prev_t > 0 else model.scheduler.final_alpha_cumprod
@@ -79,7 +79,7 @@ def p2p_guidance_diffusion_step(model, controller, latents, context, t, guidance
         recon_mask = 1 - mask_edit
 
         
-        pred_x0[1] = pred_x0[1] - recon_lr * (pred_x0[1] - pred_x0_uam) * recon_mask
+        pred_x0[1] = pred_x0[1] -  (pred_x0[1] - pred_x0_uam) * recon_mask
         pred_dir = (1 - alpha_prod_t_prev)**0.5 * noise_pred
         latents = alpha_prod_t_prev**0.5 * pred_x0 + pred_dir
 
@@ -239,7 +239,7 @@ def direct_inversion_p2p_guidance_diffusion_step(model, controller, latents, con
     recon_t_begin = recon_t   
     quantile_list=np.linspace(0, quantile, 50)
     if ( (t < recon_t_begin) and ( t > recon_t_end)):
-        recon_lr=1 
+        
         print(f"a quantile:{quantile}:{quantile_list[i]}, recon_t_end:{recon_t_end}")
         prev_t = t - model.scheduler.config.num_train_timesteps  // model.scheduler.num_inference_steps
         alpha_prod_t = model.scheduler.alphas_cumprod[t]
@@ -263,7 +263,7 @@ def direct_inversion_p2p_guidance_diffusion_step(model, controller, latents, con
         mask_edit = dilate(mask_edit.float(), kernel_size=2*radius+1, padding=radius)    
         recon_mask = 1 - mask_edit
 
-        pred_x0[1] = pred_x0[1] - recon_lr * (pred_x0[1] - pred_x0_uam) * recon_mask
+        pred_x0[1] = pred_x0[1] - (pred_x0[1] - pred_x0_uam) * recon_mask
         pred_dir = (1 - alpha_prod_t_prev)**0.5 * noise_pred
         latents = alpha_prod_t_prev**0.5 * pred_x0 + pred_dir
 
