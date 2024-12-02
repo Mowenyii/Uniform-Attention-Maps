@@ -6,7 +6,8 @@ This repository provides the implementation of the paper **"Uniform Attention Ma
 Keywords: Diffusion Model, Image Inversion, Image Editing
 
 
-
+<a href='https://arxiv.org/abs/2411.19652'><img src='https://img.shields.io/badge/ArXiv-2411.19652-red'></a> 
+[![GitHub](https://img.shields.io/github/stars/Mowenyii/Uniform-Attention-Maps?style=social)](https://github.com/Mowenyii/Uniform-Attention-Maps)
 
 
 
@@ -73,8 +74,18 @@ Quantitative comparison of image editing on the PIE benchmark. The methods are c
 
 
 
-<!-- ###  Cite Us -->
-
+###  Cite Us
+```
+@misc{mo2024uniformattentionmapsboosting,
+      title={Uniform Attention Maps: Boosting Image Fidelity in Reconstruction and Editing}, 
+      author={Wenyi Mo and Tianyu Zhang and Yalong Bai and Bing Su and Ji-Rong Wen},
+      year={2024},
+      eprint={2411.19652},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2411.19652}, 
+}
+```
 
 
 
